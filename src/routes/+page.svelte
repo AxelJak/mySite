@@ -1,8 +1,10 @@
+<script>
+    import Footer from "$lib/Footer.svelte";
+    import Header from "$lib/Header.svelte";
+
+</script>
 <body>
-    <nav class="grid">
-        <a class="home" href="/">home</a>
-        <a class="info" href="/info">info</a>
-    </nav>
+    <Header/>
     
     <div class="grid container">
         <h4 class="intro" >hello my name is <br> &nbsp;&nbsp;&nbsp;&nbsp; Axel Jakobsson</h4>
@@ -10,12 +12,10 @@
         <img class="norge" src="norge.jpg" alt="Axel in Norway">
         <img class="blabar" src="blabar.jpg" alt="Axel eating blueberries">
         <h4 class="umea">based in umeå</h4>
-        <a class="my_work" href="my_work.hmtl">my work</a>
-        
+        <a class="my_work" href="/myWork">my work</a>
     </div>
-    <footer class="grid">
-        <h5 class="contact">contact - <br> axel.jakobsson3@gmail.com</h5>
-    </footer>
+
+    <Footer/>
 </body>
 
 <style>
@@ -37,24 +37,6 @@
         text-decoration: none;
     }
 
-    nav a {
-        font-size: 3rem;
-    }
-    nav {
-        grid-template-columns: 7fr 1fr 1fr 1fr;
-        justify-items: center;
-        grid-template-areas:
-        ". home info .";
-        margin: 3rem 0px;
-    }
-
-    .home {
-        grid-area: home;
-    }
-    .info {
-        grid-area: info;
-    }
-
     .grid {
         display: grid;
     }
@@ -66,7 +48,6 @@
         "intro bar"
         "web bar"
         "norge bar" 
-
         "norge work"
         "norge umea";
 
@@ -104,9 +85,5 @@
     img {
         padding: 2rem;
         width: 30rem;
-    }
-
-    footer {
-        justify-items: center;
     }
 </style>
