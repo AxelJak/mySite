@@ -4,18 +4,20 @@
 
 </script>
 <body>
-    <Header/>
     
-    <div class="grid container">
+    <Header/>
+    <div class="container">
+
         <h4 class="intro" >hello my name is <br> &nbsp;&nbsp;&nbsp;&nbsp; Axel Jakobsson</h4>
         <h4 class="web-developer" >i'm a web developer</h4>
         <img class="norge" src="norge.jpg" alt="Axel in Norway">
         <img class="blabar" src="blabar.jpg" alt="Axel eating blueberries">
         <h4 class="umea">based in umeå</h4>
         <a class="my_work" href="/myWork">my work</a>
+    
+        <Footer/>
     </div>
 
-    <Footer/>
 </body>
 
 <style>
@@ -29,6 +31,7 @@
         text-decoration:underline;
         font-size: 1.2rem;
     }
+
     a:hover { 
         color: rgb(210, 204, 204);
     }
@@ -37,11 +40,8 @@
         text-decoration: none;
     }
 
-    .grid {
-        display: grid;
-    }
-
     .container {
+        display: grid;
         grid-template-columns: auto auto;
         place-items: center;
         grid-template-areas: 
@@ -82,6 +82,17 @@
         grid-area: umea;
     }
 
+    @media only screen and (max-width: 600px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        img {
+            padding: 2rem;
+            width: 70%;
+        }
+    }
     img {
         padding: 2rem;
         width: 30rem;

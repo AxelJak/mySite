@@ -1,5 +1,5 @@
 <body>
-    <nav class="grid">
+    <nav>
         <a class="home" href="/">home</a>
         <a class="info" href="/info">info</a>
     </nav>
@@ -23,7 +23,9 @@
         font-size: 3rem;
     }
     nav {
+        display: grid;
         grid-template-columns: 7fr 1fr 1fr 1fr;
+        row-gap: 5rem;
         justify-items: center;
         grid-template-areas:
         ". home info .";
@@ -37,7 +39,13 @@
         grid-area: info;
     }
 
-    .grid {
-        display: grid;
+    @media (max-width: 600px) {
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
     }
+
 </style>
